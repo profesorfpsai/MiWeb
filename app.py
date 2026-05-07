@@ -1,5 +1,5 @@
 import os
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import psycopg2
 
 app = Flask(__name__)
@@ -15,7 +15,7 @@ def get_db_connection():
 # 🏠 Ruta principal
 @app.route("/")
 def home():
-    return jsonify({"mensaje": "API funcionando correctamente 🚀"})
+    return render_template("index.html")
 
 
 # 📋 Obtener todos los clientes
