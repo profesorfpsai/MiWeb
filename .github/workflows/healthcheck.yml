@@ -1,0 +1,13 @@
+name: Health Check Web
+
+on:
+  push:
+  
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check website status
+        run: |
+          curl -f https://miweb-7ywr.onrender.com/ || exit 1
